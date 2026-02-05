@@ -91,7 +91,30 @@ body {
   transform: rotate(-45deg);
   width: 30px;
 }
+.bg-hearts span{
+  position: fixed;
+  bottom: -50px;
+  font-size: 20px;
+  color: #ff4d6d;
+  animation: floatHearts 10s linear infinite;
+}
 
+.bg-hearts span:nth-child(1){ left:10%; animation-delay:0s; }
+.bg-hearts span:nth-child(2){ left:25%; animation-delay:2s; }
+.bg-hearts span:nth-child(3){ left:50%; animation-delay:4s; }
+.bg-hearts span:nth-child(4){ left:70%; animation-delay:1s; }
+.bg-hearts span:nth-child(5){ left:90%; animation-delay:3s; }
+
+@keyframes floatHearts{
+  0%{
+    transform: translateY(0) scale(0.8);
+    opacity:1;
+  }
+  100%{
+    transform: translateY(-800px) scale(1.5);
+    opacity:0;
+  }
+}
 .heart:before,
 .heart:after {
   content: "";
@@ -116,7 +139,19 @@ body {
   width: 10px;
   top: 50px;
 }
+.top-flowers{
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+  animation: sway 4s ease-in-out infinite;
+}
 
+@keyframes sway{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(8px); }
+}
 .one:before,.one:after,
 .two:before,.two:after,
 .three:before,.three:after,
@@ -252,8 +287,17 @@ body {
     <button id="yesBtn">Yes ❤️</button>
     <button id="noBtn">No 😢</button>
   </div>
+  <div class="top-flowers">
+  🌸 🌺 🌸 🌷 🌸 🌺 🌸
+  </div>
 </div>
-
+<div class="bg-hearts">
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+</div>
 <script>
 $(document).ready(function () {
 
